@@ -1,0 +1,269 @@
+.book-appointment-page {
+  min-height: 100vh;
+  background-color: #E8F4F8;
+  padding: 40px 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.page-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.page-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-container {
+  background: #F5FBFD;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.success-message {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.success-message h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.success-message p {
+  margin: 0;
+  opacity: 0.95;
+}
+
+.error-banner {
+  background-color: #ffebee;
+  border-left: 4px solid #f44336;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-banner p {
+  color: #c62828;
+  margin: 0;
+  font-size: 14px;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: #f44336;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+  font-size: 14px;
+}
+
+.btn-text:hover {
+  text-decoration: underline;
+}
+
+.selected-doctor-info {
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.selected-doctor-info h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.doctor-info-card {
+  background: #F5FBFD;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.doctor-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.doctor-spec {
+  font-size: 14px;
+  color: #4CAF50;
+  margin: 5px 0;
+}
+
+.doctor-email {
+  font-size: 12px;
+  color: #999;
+  margin-top: 8px;
+}
+
+.form-help {
+  background: #E8F4F8;
+  padding: 20px;
+  border-radius: 4px;
+  margin-top: 30px;
+}
+
+.form-help h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.form-help ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-help li {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.form-help li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.booking-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: #F5FBFD;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.info-card ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.info-card li {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.info-card strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-card ul li {
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  border: 4px solid #f0f0f0;
+  border-top: 4px solid #4CAF50;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .page-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-appointment-page {
+    padding: 20px 15px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .page-content {
+    gap: 20px;
+  }
+
+  .form-container,
+  .info-card {
+    padding: 20px;
+  }
+}

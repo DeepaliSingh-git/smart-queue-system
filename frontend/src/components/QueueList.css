@@ -1,0 +1,170 @@
+/* Queue List Styles */
+.queue-list {
+  overflow-x: auto;
+}
+
+.queue-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #F5FBFD;
+}
+
+.queue-table thead {
+  background-color: #E8F4F8;
+  border-bottom: 2px solid #e8eaed;
+}
+
+.queue-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #202124;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.queue-table tbody tr {
+  border-bottom: 1px solid #e8eaed;
+  transition: background-color 0.2s ease;
+}
+
+.queue-table tbody tr:hover {
+  background-color: #E8F4F8;
+}
+
+.queue-table td {
+  padding: 15px;
+  color: #202124;
+}
+
+/* Token Cell */
+.token-cell {
+  text-align: center;
+}
+
+.token-badge {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a73e8, #3d88f3);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.queue-row.status-waiting .token-badge {
+  background: linear-gradient(135deg, #5f6368, #818181);
+}
+
+.queue-row.status-in-progress .token-badge {
+  background: linear-gradient(135deg, #fbbc04, #fde9a8);
+  color: #7f6000;
+}
+
+.queue-row.status-completed .token-badge {
+  background: linear-gradient(135deg, #34a853, #81c995);
+}
+
+/* Patient Info */
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.patient-name {
+  margin: 0;
+  font-weight: 500;
+  color: #202124;
+}
+
+/* Status Cell */
+.status-cell {
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.status-waiting {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+
+.status-in-progress {
+  background-color: #fff8e1;
+  color: #7f6000;
+}
+
+.status-completed {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.status-cancelled {
+  background-color: #fcebee;
+  color: #c5192d;
+}
+
+/* Wait Time Cell */
+.wait-time-cell {
+  text-align: center;
+  font-weight: 500;
+  color: #1a73e8;
+}
+
+/* Action Cell */
+.action-cell {
+  text-align: center;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.action-cell button {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+/* Status Row Styling */
+.queue-row.status-completed {
+  color: #9aa0a6;
+  background-color: #f8f9fa;
+}
+
+.queue-row.status-cancelled {
+  color: #9aa0a6;
+  background-color: #f8f9fa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .queue-table {
+    font-size: 0.9rem;
+  }
+
+  .queue-table th,
+  .queue-table td {
+    padding: 10px;
+  }
+
+  .action-cell {
+    flex-direction: column;
+  }
+
+  .action-cell button {
+    width: 100%;
+  }
+}

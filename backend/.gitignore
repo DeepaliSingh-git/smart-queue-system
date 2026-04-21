@@ -1,0 +1,88 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+.flattened-pom.xml
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# IDE - Eclipse
+.classpath
+.project
+.settings/
+.c9/
+
+# IDE - VS Code
+.vscode/
+*.code-workspace
+
+# IDE - PyCharm
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+
+# Compiled class files
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Spring Boot
+.env
+.env.local
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+.gitkeep
+
+# Application properties (local)
+application-local.properties
+application-dev.properties
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Gradle
+.gradle/
+build/
+
+# Node (if using for frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# General
+.project
+.settings
+.classpath
+.c9/
+*.launch
+.scala_dependencies
+.worksheet

@@ -1,0 +1,137 @@
+/* Doctor Card Styles */
+.doctor-card {
+  border: 1px solid #e8eaed;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.doctor-card-header {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.doctor-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a73e8, #3d88f3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.doctor-avatar.doctor-image {
+  background: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.doctor-info h3 {
+  margin: 0 0 3px 0;
+  font-size: 1rem;
+}
+
+.doctor-specialization {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #5f6368;
+  font-weight: 500;
+}
+
+.divider {
+  height: 1px;
+  background-color: #e8eaed;
+  margin: 10px -20px;
+}
+
+.doctor-queue-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.queue-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #E8F4F8;
+  border-radius: 4px;
+}
+
+.queue-label {
+  font-size: 0.75rem;
+  color: #5f6368;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.queue-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+/* Wait Time */
+.wait-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.wait-time.low {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.wait-time.medium {
+  background-color: #fff8e1;
+  color: #7f6000;
+}
+
+.wait-time.high {
+  background-color: #fcebee;
+  color: #c5192d;
+}
+
+.wait-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.wait-text {
+  flex: 1;
+}
+
+/* Actions */
+.doctor-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.doctor-card-actions button {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+}

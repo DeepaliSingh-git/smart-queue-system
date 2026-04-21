@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // Configure API base URL
-const API_BASE_URL = 'http://localhost:8080/api'
+const API_BASE_URL = 'https://smart-queue-system-1.onrender.com/'
 
 // Create axios instance
 const apiClient = axios.create({

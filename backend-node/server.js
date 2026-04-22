@@ -13,9 +13,43 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = 8080;
 
-// Middleware
-app.use(cors());
+// CORS Configuration
+// Allow requests from Vercel deployment and local development
+const corsOptions = {
+  origin: function (origin, callback) {
+    // List of allowed origins
+    const allowedOrigins = [
+      'http://localhost:3000',           // Local development
+      'http://localhost:5173',           // Vite dev server
+      'http://127.0.0.1:3000',           // Local development (127.0.0.1)
+      'http://127.0.0.1:5173',           // Vite dev server (127.0.0.1)
+      'https://smart-queue-frontend-vercel.vercel.app', // Replace with your actual Vercel frontend URL
+      /\.vercel\.app$/,                  // Allow all Vercel deployments
+    ];
+
+    // Allow requests without origin (like mobile apps or curl requests)
+    if (!origin || allowedOrigins.some(allowed => {
+      if (allowed instanceof RegExp) {
+        return allowed.test(origin);
+      }
+      return allowed === origin;
+    })) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
+
+// Preflight requests
+app.options('*', cors(corsOptions));
 
 // Initialize SQLite Database
 const dataDir = path.join(__dirname, 'data');

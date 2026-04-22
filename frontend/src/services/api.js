@@ -1,7 +1,23 @@
 import axios from 'axios'
 
-// Configure API base URL
-const API_BASE_URL = 'https://smart-queue-system-1.onrender.com/'
+/**
+ * API Configuration
+ * Uses environment variables with fallback for local development
+ * Environment Variable: VITE_API_URL (e.g., https://smart-queue-system-1.onrender.com)
+ * Local Development: Uses Vite proxy in vite.config.js (/api -> http://localhost:8080)
+ */
+const getBaseURL = () => {
+  // Production: Use environment variable
+  if (import.meta.env.VITE_API_URL) {
+    return `${import.meta.env.VITE_API_URL}/api`
+  }
+  // Development: Use relative path (Vite proxy will handle routing)
+  return '/api'
+}
+
+const API_BASE_URL = getBaseURL()
+
+console.log('🔗 API Base URL:', API_BASE_URL)
 
 // Create axios instance
 const apiClient = axios.create({
@@ -9,13 +25,36 @@ const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 10000, // 10 second timeout
 })
 
-// Add response interceptor for error handling
-apiClient.interceptors.response.use(
-  (response) => response,
+// Add request interceptor for logging
+apiClient.interceptors.request.use(
+  (config) => {
+    console.log(`📤 [${config.method.toUpperCase()}] ${config.url}`)
+    return config
+  },
   (error) => {
-    console.error('API Error:', error.response?.data || error.message)
+    console.error('Request error:', error)
+    return Promise.reject(error)
+  }
+)
+
+// Add response interceptor for error handling and logging
+apiClient.interceptors.response.use(
+  (response) => {
+    console.log(`📥 Response from ${response.config.url}:`, response.data)
+    return response
+  },
+  (error) => {
+    const errorMessage = error.response?.data?.message || error.message
+    console.error(`❌ API Error (${error.response?.status || 'Network'})`, {
+      url: error.config?.url,
+      method: error.config?.method,
+      status: error.response?.status,
+      message: errorMessage,
+      data: error.response?.data,
+    })
     return Promise.reject(error)
   }
 )
